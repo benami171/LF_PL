@@ -1,3 +1,101 @@
+# MST Graph Processing Server
+
+A high-performance, multi-threaded server implementation for processing Minimum Spanning Tree (MST) algorithms and graph analytics. This project demonstrates advanced concurrent programming patterns and design principles in C++.
+
+## 🌟 Features
+
+### Graph Algorithms
+- **MST Algorithms**
+  - Prim's Algorithm
+  - Kruskal's Algorithm
+- **Graph Analytics**
+  - Floyd-Warshall Algorithm for shortest paths
+  - Total weight calculation
+  - Average distance computation
+  - Longest/shortest distance analysis
+
+### Concurrent Design Patterns
+- **Leader-Follower Pattern**
+  - Dynamic thread pool management
+  - Efficient task distribution
+  - Leader election mechanism
+  
+- **Active Object Pattern**
+  - Asynchronous operation processing
+  - Message passing between stages
+  - Thread-safe queue management
+
+- **Pipeline Pattern**
+  - Multi-stage graph processing
+  - Parallel execution of analytics
+  - Sequential data flow management
+
+### Architecture
+- **Client-Server Model**
+  - TCP/IP communication
+  - Multi-client support
+  - Non-blocking I/O with poll
+
+- **Design Patterns**
+  - Singleton Pattern for resource management
+  - Factory Pattern for algorithm creation
+  - Strategy Pattern for algorithm selection
+
+## 🚀 Getting Started
+
+### Prerequisites
+- CMake (version 3.22 or higher)
+- C++ Compiler with C++17 support
+- pthread library
+- Linux/Unix environment
+
+### Building the Project
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
+### Running the server
+```bash
+./main
+```
+The server will start listening on port 9034 by default.
+
+## 📝 Usage
+
+### Client Commands
+- `Newgraph` - Create a new graph
+- `MST` - Calculate Minimum Spanning Tree
+- `Newedge` - Add edge to graph
+- `Removeedge` - Remove edge from graph
+- `Exit` - Close connection
+
+### Processing Modes
+- `LF` - Leader-Follower thread pool processing
+- `P` - Pipeline processing
+
+### Algorithm Selection
+- `Prim` - Use Prim's algorithm for MST
+- `Kruskal` - Use Kruskal's algorithm for MST
+
+## 🔧 Architecture Details
+
+### Thread Management
+- Thread-safe queue implementations
+- Mutex-protected shared resources
+- Condition variables for synchronization
+- Graceful shutdown mechanisms
+
+### Memory Management
+- RAII principles
+- Resource cleanup on shutdown
+
+### Error Handling
+- Exception safety
+- Error reporting
+- Graceful degradation
+
 ### Coverage Analysis
 ```bash
 # Generate coverage report
